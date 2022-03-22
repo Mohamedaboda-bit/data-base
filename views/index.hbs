@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-sm-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header"><h2 class='text-center'>add data</h2></div>
+            <div class="card-body text-dark">
+                <form action="/insert" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">user name</label>
+                        <input type="text" class="form-control" placeholder="userName" name='userName'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">email</label>
+                        <input type="email" class="form-control" placeholder="userEmail" name="userEmail">
+                    </div>
+                    <div class='text-center'>
+                        <button type="submit" class="btn btn-primary">add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header"><h2 class='text-center'>get all data</h2></div>
+                <div class="card-body text-dark">
+                    <form action="/getusers" method="get">
+                     {{#each list}}
+                     <div>
+                      <br>   id: {{this._id}} 
+
+                     </div>
+                     
+                     <div>
+                        username: {{this.userName}}
+                     </div>
+                     
+                     <div>
+                        eamil: {{this.userEmail}}
+                     </div>
+                     {{/each}}
+                     <br>
+                        <div class='text-center'>
+                            <button type="submit" class="btn btn-primary">get</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header"><h2 class='text-center'>change data</h2></div>
+            <div class="card-body text-dark">
+                <form action="/updatedata" method="post">
+                 <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">ID</label>
+                        <input type="text" class="form-control" placeholder="id" name='id'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">user name</label>
+                        <input type="text" class="form-control" placeholder="userName" name='userName'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">email</label>
+                        <input type="email" class="form-control" placeholder="userEmail" name="userEmail">
+                    </div>
+                    <div class='text-center'>
+                        <button type="submit" class="btn btn-primary">change</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+        <div class="col-sm-3">
+        <div class="card">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header"><h2 class='text-center'>delete data</h2></div>
+            <div class="card-body text-dark">
+                <form action="/delete" method="post">
+                 <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">ID</label>
+                        <input type="text" class="form-control" placeholder="id" name='id'>
+                    </div>
+                    
+                    <div class='text-center'>
+                        <button type="submit" class="btn btn-primary">delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
